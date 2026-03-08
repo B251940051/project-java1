@@ -11,5 +11,5 @@ public class Lab2 {
 		input.close();
 		
 	}
-
 }
+
