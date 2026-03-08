@@ -9,7 +9,7 @@ public class Lab2 {
 		busluuriinUrt = 2 * Math.PI * r;
 		System.out.println("niitUrt = " + busluuriinUrt);
 		input.close();
-		
 	}
 }
+
 
