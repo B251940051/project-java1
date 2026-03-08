@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class DateTime {
 	private int year;
     private int month;
-    private int day;
+    private int datenumber;
     public DateTime(String dt) {
     	String[] values = dt.split("[-./]");
         year = Integer.parseInt(values[0]);
         month = Integer.parseInt(values[1]);
-        day = Integer.parseInt(values[2]);
+        datenumber = Integer.parseInt(values[2]);
     }
 
     private int getyearcode(int year) {
@@ -28,8 +28,8 @@ public class DateTime {
             case 10: return 0;
             case 11: return 3;
             case 12: return 5;
+			default: return 0;
         }
-        return 0;
     }
     private int getcenturycode(int century){
 
@@ -58,7 +58,7 @@ public class DateTime {
         int monthcode = getmonthcode(month);
         int centurycode = getcenturycode(year / 100);
         int leapyearcode = getleapyearcode(year, month);
-        int result = (yearcode + monthcode + centurycode + day - leapyearcode) % 7;
+        int result = (yearcode + monthcode + centurycode + datenumber - leapyearcode) % 7;
         return result;
     }
 
@@ -71,8 +71,9 @@ public class DateTime {
 
         int d = dayofweek();
         System.out.println(year + " onii " + month +
-                "-r sariin " + day + " bol " + days[d]);
+                "-r sariin " + datenumber + " bol " + days[d]);
     }
 }
+
 
 
